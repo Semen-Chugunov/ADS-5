@@ -3,8 +3,30 @@
 #define INCLUDE_TSTACK_H_
 
 template<typename T, int size>
-class TStack {
-  // добавьте код стека
+
+ private:
+    T* arr;
+    int h;
+
+ public:
+    TStack() {
+        h = -1;
+    }
+    void Push(const T& value) {
+      if (!isfull())
+        arr[++h] = value;
+      else
+        throw std::string("error")
+    }
+    bool isfull() {
+        return h == size - 1;
+    }
+    T get() {
+      return arr[h];
+    }
+    T pop() {
+      return arr[h--];
+    }
 };
 
 #endif  // INCLUDE_TSTACK_H_
