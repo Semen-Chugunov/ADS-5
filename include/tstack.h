@@ -12,7 +12,7 @@ template<typename T, int size>
     TStack() {
         h = -1;
     }
-    void Push(const T& value) {
+    void push(const T& value) {
       if (!isfull())
         arr[++h] = value;
       else
@@ -27,6 +27,10 @@ template<typename T, int size>
     T pop() {
       return arr[h--];
     }
+    bool isempty() const {
+        return top == -1;
+    }
+
 };
 
 #endif  // INCLUDE_TSTACK_H_
