@@ -18,7 +18,7 @@ int top (char c) {
 std::string infx2pstfx(std::string inf) {
     TStack<char, 100> stk;
     std::string res;
-    int k;
+    int k = 0;
     for (char c : inf) {
         bool fl = 1;
         if (top(c) == -1) {
