@@ -30,7 +30,6 @@ template<typename T, int size>
     bool isempty() const {
         return top == -1;
     }
-
 };
 
 #endif  // INCLUDE_TSTACK_H_
