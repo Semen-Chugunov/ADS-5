@@ -2,6 +2,7 @@
 #include <string>
 #include <map>
 #include "tstack.h"
+
 int top (char c) {
     if (c == '*' || c == '/') {
         return 3;
