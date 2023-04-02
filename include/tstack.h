@@ -22,13 +22,16 @@ template<typename T, int size>
         return h == size - 1;
     }
     T get() {
-      return arr[h];
+        return arr[h];
     }
     T pop() {
-      return arr[h--];
+        return arr[h--];
     }
     bool isempty() const {
         return top == -1;
+    }
+    int GetTop() const {
+        return top; 
     }
 };
 
