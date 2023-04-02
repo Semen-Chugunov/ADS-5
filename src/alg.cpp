@@ -3,7 +3,7 @@
 #include <map>
 #include "tstack.h"
 
-int top (char c) {
+int top(char c) {
     if (c == '*' || c == '/') {
         return 3;
     if (c == '+' || c == '-')
