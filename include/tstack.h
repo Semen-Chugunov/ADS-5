@@ -1,9 +1,10 @@
 // Copyright 2021 NNTU-CS
 #ifndef INCLUDE_TSTACK_H_
 #define INCLUDE_TSTACK_H_
+#include <string>
 
 template<typename T, int size>
-
+class TStack {
  private:
     T* arr;
     int h;
@@ -31,9 +32,8 @@ template<typename T, int size>
         return top == -1;
     }
     int GetTop() const {
-        return top; 
+        return top;
     }
-
 };
 #ifndef INCLUDE_TSTACK_H_
 #define INCLUDE_TSTACK_H_
