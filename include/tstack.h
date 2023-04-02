@@ -27,6 +27,13 @@ template<typename T, int size>
     T pop() {
       return arr[h--];
     }
-};
+    bool isempty() const {
+        return top == -1;
+    }
+    int GetTop() const {
+        return top; 
+    }
 
-#endif  // INCLUDE_TSTACK_H_
+};
+#ifndef INCLUDE_TSTACK_H_
+#define INCLUDE_TSTACK_H_
