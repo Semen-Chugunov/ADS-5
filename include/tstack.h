@@ -35,5 +35,5 @@ class TStack {
         return top;
     }
 };
-#ifndef INCLUDE_TSTACK_H_
-#define INCLUDE_TSTACK_H_
+
+#endif  // INCLUDE_TSTACK_H_
