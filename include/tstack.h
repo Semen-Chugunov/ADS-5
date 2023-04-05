@@ -3,10 +3,10 @@
 #define INCLUDE_TSTACK_H_
 #include <string>
 
-template<typename T, int size>
+template<typename T, int size = 0>
 class TStack {
  private:
-    T* arr;
+    T* arr[size] = {0};
     int h;
 
  public:
@@ -22,7 +22,7 @@ class TStack {
     bool isfull() {
         return h == size;
     }
-    T get() {
+    T get() const {
       return arr[h];
     }
     T pop() {
