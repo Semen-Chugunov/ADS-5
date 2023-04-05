@@ -28,15 +28,15 @@ std::string infx2pstfx(std::string inf) {
             fl = 0;
         }
         if (top(c) == 0) {
-            stk.Push(c);
+            stk.push(c);
             fl = 0;
         }
         if (top(c) > top(stk.get())) {
-            stk.Push(c);
+            stk.push(c);
             fl = 0;
         }
         if (stk.isempty() && top(c) != -1) {
-            stk.Push(c);
+            stk.push(c);
             fl = 0;
         }
         if (fl && c != ')') {
@@ -44,7 +44,7 @@ std::string infx2pstfx(std::string inf) {
                 res += stk.pop();
                 res += ' ';
             }
-            stk.Push(c);
+            stk.push(c);
         }
         if (c == ')') {
             while (stk.get() != '(') {
@@ -74,26 +74,26 @@ int eval(std::string pref) {
         if (c == '+') {
             int tmp = stk1.pop();
             tmp += stk1.pop();
-            stk1.Push(tmp);
+            stk1.push(tmp);
         }
         if (c == '-') {
             int tmp = stk1.pop();
             tmp = stk1.pop() - tmp;
-            stk1.Push(tmp);
+            stk1.push(tmp);
         }
         if (c == '*') {
             int tmp = stk1.pop();
             tmp *= stk1.pop();
-            stk1.Push(tmp);
+            stk1.push(tmp);
         }
         if (c == '/') {
             int tmp = stk1.pop();
             tmp = stk1.pop() / tmp;
-            stk1.Push(tmp);
+            stk1.push(tmp);
         }
         if ((c - '0') > 0) {
-            int tmp = c - '0';
-            stk1.Push(tmp);
+            int t = c - '0';
+            stk1.push(t);
         }
     }
     return stk1.get();
