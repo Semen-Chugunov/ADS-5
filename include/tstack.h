@@ -17,7 +17,7 @@ class TStack {
       if (!isfull())
         arr[++h] = value;
       else
-        throw std::string("error")
+        throw std::string("error");
     }
     bool isfull() {
         return h == size - 1;
@@ -29,10 +29,10 @@ class TStack {
       return arr[h--];
     }
     bool isempty() const {
-        return top == -1;
+        return h == -1;
     }
     int GetTop() const {
-        return top;
+        return h == size;
     }
 };
 
