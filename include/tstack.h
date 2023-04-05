@@ -13,7 +13,7 @@ class TStack {
     TStack() {
         h = -1;
     }
-    void Push(const T& value) {
+    void push(const T& value) {
       if (!isfull())
         arr[++h] = value;
       else
