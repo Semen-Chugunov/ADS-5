@@ -19,80 +19,80 @@ int top(char c) {
 std::string infx2pstfx(std::string inf) {
     TStack<char, 100> stk;
     std::string res;
-    int k = 0;
-    for (char c : inf) {
+    int l = 0;
+    for (char k : inf) {
         bool fl = 1;
-        if (top(c) == -1) {
-            res += c;
+        if (top(k) == -1) {
+            res += k;
             res += ' ';
             fl = 0;
         }
-        if (top(c) == 0) {
-            stk.push(c);
+        if (top(k) == 0) {
+            stk.push(k);
             fl = 0;
         }
-        if (top(c) > top(stk.get())) {
-            stk.push(c);
+        if (top(k) > top(stk.get())) {
+            stk.push(k);
             fl = 0;
         }
-        if (stk.isempty() && top(c) != -1) {
-            stk.push(c);
+        if (stk.isempty() && top(k) != -1) {
+            stk.push(k);
             fl = 0;
         }
-        if (fl && c != ')') {
-            while (top(stk.get()) >= top(c)) {
+        if (fl && k != ')') {
+            while (top(stk.get()) >= top(k)) {
                 res += stk.pop();
                 res += ' ';
             }
-            stk.push(c);
+            stk.push(k);
         }
-        if (c == ')') {
+        if (k == ')') {
             while (stk.get() != '(') {
                 res += stk.pop();
                 res += ' ';
             }
             stk.pop();
         }
-        if (k == inf.size() - 1) {
+        if (l == inf.size() - 1) {
             while (!stk.isempty()) {
                 res += stk.pop();
                 if (stk.GetTop() != -1)
                     res += ' ';
             }
         }
-        ++k;
+        ++l;
     }
     return res;
 }
 
 int eval(std::string pref) {
   TStack<int, 100> stk1;
-    for (char c : pref) {
-        if (c == ' ') {
+    for (char k : pref) {
+        if (k == ' ') {
             continue;
         }
-        if (c == '+') {
+        if (k == '+') {
             int tmp = stk1.pop();
             tmp += stk1.pop();
             stk1.push(tmp);
         }
-        if (c == '-') {
+        if (k == '-') {
             int tmp = stk1.pop();
             tmp = stk1.pop() - tmp;
             stk1.push(tmp);
         }
-        if (c == '*') {
+        if (k == '*') {
             int tmp = stk1.pop();
             tmp *= stk1.pop();
             stk1.push(tmp);
         }
-        if (c == '/') {
+        if (k == '/') {
             int tmp = stk1.pop();
             tmp = stk1.pop() / tmp;
             stk1.push(tmp);
         }
-        if ((c - '0') > 0) {
-            int t = c - '0';
+        if ((k - '0') > 0) {
+            int t = k - '0';
             stk1.push(t);
         }
     }
