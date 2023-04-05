@@ -20,7 +20,7 @@ class TStack {
         throw std::string("error");
     }
     bool isfull() {
-        return h == size - 1;
+        return h == size;
     }
     T get() {
       return arr[h];
@@ -32,7 +32,7 @@ class TStack {
         return h == -1;
     }
     int GetTop() const {
-        return h == size;
+        return h;
     }
 };
 
