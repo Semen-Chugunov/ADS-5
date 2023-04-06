@@ -1,7 +1,6 @@
 // Copyright 2021 NNTU-CS
 #ifndef INCLUDE_TSTACK_H_
 #define INCLUDE_TSTACK_H_
-#include <string>
 
 template<typename T, int size = 0>
 class TStack {
@@ -16,17 +15,15 @@ class TStack {
     void push(const T& value) {
       if (!isfull())
         arr[++h] = value;
-      else
-        throw std::string("error");
     }
     bool isfull() {
         return h == size;
     }
     T get() const {
-      return arr[h];
+        return arr[h];
     }
     T pop() {
-      return arr[h--];
+        return arr[h--];
     }
     bool isempty() const {
         return h == -1;
