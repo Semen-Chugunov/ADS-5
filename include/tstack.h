@@ -17,19 +17,20 @@ class TStack {
         arr[++h] = value;
     }
     bool isfull() {
-        return h == size;
+        return h == size - 1;
     }
-    T get() const {
-        return arr[h];
-    }
-    T pop() {
-        return arr[h--];
+    const T& pop() {
+        if (isempty()) {
+            throw std::string("empty");
+        } else {
+            return arr[h--];
+        }
     }
     bool isempty() const {
         return h == -1;
     }
     int GetTop() const {
-        return h;
+        return arr[h];
     }
 };
 
