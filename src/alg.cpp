@@ -35,7 +35,7 @@ std::string infx2pstfx(std::string inf) {
             stk.push(k);
             fl = 0;
         }
-        if (stk.isempty() && top(k) != -1) {
+        if (stk.isempty() && (top(k) != -1)) {
             stk.push(k);
             fl = 0;
         }
